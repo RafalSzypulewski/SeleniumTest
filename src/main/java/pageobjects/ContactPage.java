@@ -9,8 +9,6 @@ public class ContactPage extends BasePage {
         super(driver);
     }
 
-    public ContactPage load() {
-        driver.get(config.getProperty("environment.url"));
-        return this;
-    }
+
+
 }

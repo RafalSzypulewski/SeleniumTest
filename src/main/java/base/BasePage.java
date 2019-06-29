@@ -1,5 +1,6 @@
 package base;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -14,14 +15,22 @@ public class BasePage {
 
     protected Integer defaultWaitTime = 10;
 
-    public BasePage(WebDriver driver){
-        config=new Properties();
-        try{
+    public BasePage(WebDriver driver) {
+        config = new Properties();
+        try {
             config.load(new FileInputStream("src\\main\\resources\\config.properties"));
-        }catch (Exception eta){
+        } catch (Exception eta) {
             eta.printStackTrace();
         }
-        this.driver=driver;
-        wait=new WebDriverWait(driver, defaultWaitTime);
+        this.driver = driver;
+        wait = new WebDriverWait(driver, defaultWaitTime);
+    }
+
+    public String getPageBody(){
+        return driver.findElement(By.tagName("body")).getText();
+    }
+
+    public String getCurrentUrl(){
+        return driver.getCurrentUrl();
     }
 }
