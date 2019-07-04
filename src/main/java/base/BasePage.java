@@ -23,14 +23,14 @@ public class BasePage {
             eta.printStackTrace();
         }
         this.driver = driver;
-        wait = new WebDriverWait(driver, defaultWaitTime);
+        wait = new ouWebDriverWait(driver, defaultWaitTime);
     }
 
-    public String getPageBody(){
+    public String getPageBody() {
         return driver.findElement(By.tagName("body")).getText();
     }
 
-    public String getCurrentUrl(){
+    public String getCurrentUrl() {
         return driver.getCurrentUrl();
     }
 }

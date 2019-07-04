@@ -5,7 +5,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import pageobjects.MainPage;
 
 import java.util.HashMap;
@@ -28,7 +31,7 @@ public abstract class BaseGui {
             driver = new ChromeDriver(options);
         } else if (browser.equals("firefox")) {
             FirefoxOptions options = new FirefoxOptions();
-            options.addPreference ("browser.download.folderList", 2);
+            options.addPreference("browser.download.folderList", 2);
             options.addPreference("browser.download.dir", System.getProperty("user.dir"));
             options.addPreference("pdfjs.disabled", true);
             options.addPreference("browser.helperApps.neverAsk.saveToDisk", "application/pdf");

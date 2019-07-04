@@ -13,6 +13,7 @@ public class NavigationMenu extends BasePage {
     private By portfolioButton = By.xpath("//a[text()='Portfolio']");
     private By webAutomationMobileButton = By.xpath("//a[text()='Web, Automation & Mobile Testing']");
     private By portfolioHighlightedButton = By.xpath("//a[text()='Portfolio']/parent::li[contains(@class, 'current-menu-ancestor')]");
+    private By careerButton = By.xpath("//a[text()='Karriere']");
 
     public NavigationMenu(WebDriver driver) {
         super(driver);
@@ -27,6 +28,11 @@ public class NavigationMenu extends BasePage {
     public MainPage goToMainPage() {
         driver.findElement(mainPageButton).click();
         return new MainPage(driver);
+    }
+
+    public CareerPage goToCareerPage() {
+        driver.findElement(careerButton).click();
+        return new CareerPage(driver);
     }
 
     public WamTestingPage clickWebAutomationMobileButton() {

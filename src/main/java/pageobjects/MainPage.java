@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 public class MainPage extends BasePage {
 
-    private By contactButtonFooter=By.xpath("//ul[@id='menu-footer-menu']/li/a[text()='Kontakt & Anfahrt']");
+    private By contactButtonFooter = By.xpath("//ul[@id='menu-footer-menu']/li/a[text()='Kontakt & Anfahrt']");
 
     public MainPage(WebDriver driver) {
         super(driver);
@@ -17,11 +17,11 @@ public class MainPage extends BasePage {
         return this;
     }
 
-    public ContactPage goToContactPageUsingFooterLink(){
+    public ContactPage goToContactPageUsingFooterLink() {
         return clickContactButtonFooter();
     }
 
-    public ContactPage clickContactButtonFooter(){
+    public ContactPage clickContactButtonFooter() {
         driver.findElement(contactButtonFooter).click();
         return new ContactPage(driver);
     }
