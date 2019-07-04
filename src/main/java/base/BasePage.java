@@ -23,7 +23,7 @@ public class BasePage {
             eta.printStackTrace();
         }
         this.driver = driver;
-        wait = new ouWebDriverWait(driver, defaultWaitTime);
+        wait = new WebDriverWait(driver, defaultWaitTime);
     }
 
     public String getPageBody() {
